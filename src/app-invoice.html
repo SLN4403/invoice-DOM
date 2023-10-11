@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Invoice App</title>
+  <link rel="stylesheet" href="../dist/output.css" />
+</head>
+
+<body>
+  <main id="app">
+    <header class="max-w-[550px] mx-auto py-10">
+      <h1 class="font-bold text-blue-600 font-heading text-3xl">One Stop Solutions</h1>
+      <p class="text-neutral-500 font-body">Invoice App</p>
+    </header>
+
+    <div class="max-w-[550px] mx-auto">
+      <form id="addRecord" class="mb-5" action="">
+        <div class="grid gap-3 grid-cols-3">
+          <select class="border border-blue-500 w-full block p-3" name="product_id" id="">
+            <option value="domain">Select Product</option>
+          </select>
+          <input class="border border-blue-500 w-full block p-3" type="number" name="quantity" placeholder="Quantity" />
+          <button class="border border-blue-200 bg-blue-500 text-white w-full block p-3">
+            Add Record
+          </button>
+        </div>
+      </form>
+
+      <table class="w-full">
+        <thead class="bg-blue-500 text-white">
+          <tr>
+            <th class="p-3">#</th>
+            <th class="p-3 text-start w-52">Product</th>
+            <th class="p-3 text-end">Price</th>
+            <th class="p-3 text-end">Quantity</th>
+            <th class="p-3 text-end">Cost</th>
+          </tr>
+        </thead>
+
+        <tbody id="recordList">
+          <tr class="hidden last:table-row">
+            <td class="text-center p-3" colspan="5">
+              There is no record
+            </td>
+          </tr>
+        </tbody>
+        
+        <tfoot>
+          <tr>
+            <td class="p-3 text-center bg-blue-200" colspan="4">Total</td>
+            <td id="costTotal" class="p-3 text-end bg-blue-200 ">0</td>
+          </tr>
+        </tfoot>
+      </table>
+    </div>
+  </main>
+  <script src="./js/invoice.js"></script>
+</body>
+
+</html>
